@@ -2,8 +2,8 @@ var MongoClient = require('mongodb').MongoClient;
 var clientConfig = require('./config').client;
 
 function DB() {
-	this.db = null;
-	this.dbo = null;
+      this.db = null;
+      this.dbo = null;
 }
 
 DB.prototype.connect = function() {
