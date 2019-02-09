@@ -1,0 +1,13 @@
+#login-btn {
+	margin-bottom: 4px;
+}
+
+#login-panel, #logout-panel {
+	margin: 5px;
+}
+
+#condition-list-group {
+	min-height: 300px;
+	max-height: 374px;
+	overflow-y: auto;
+}

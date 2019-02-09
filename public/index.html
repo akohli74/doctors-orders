@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Gyant Programming Assignment</title>
+    <script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
+    <script type="text/javascript" src="js/bootstrap.bundle.min.js"></script>
+    <script type="text/javascript" src="js/underscore-min.js"></script>
+    <script type="text/javascript" src="js/backbone-min.js"></script>
+    <script type="text/javascript" src="js/router.js"></script>
+    <script type="text/javascript" src="js/ehr.view.js"></script>
+    <script type="text/javascript" src="js/condition-item.view.js"></script>
+    <script type="text/javascript" src="js/conditions.view.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  </head>
+
+  <body>
+  	<div class="float-right" id="login-panel">
+		<p class="small">
+			<form action="/login" method="post">
+				<input type="text" class="" id="username" value="" placeholder="Username" />
+				<input type="password" class="password" value="" placeholder="Password" />
+				<button type="submit" class="btn btn-sm btn-primary" id="login-btn">Login</button>
+			</form>
+		</p> <!-- small -->
+	</div> <!-- float-right -->
+	<div class="d-none float-right" id="logout-panel">
+		<p class="small font-weight-bold">
+			<mark>Logged in as Dr. John Doe</mark>
+			<input type="button" class="btn btn-sm btn-danger" id="login-btn" value="Logout" />
+		</p> <!-- small -->
+	</div> <!-- float-right -->
+  	<div class="container-fluid">
+  		<div class="row-fluid">
+  			<div class="row">
+				<div class="col-md-6">
+	  				<p class="strong">
+	  					Please Review This Case:
+	  				</p>
+	  				<div class="form-group">
+	  					<textarea disabled class="form-control" id="ehr-text" rows=15></textarea>
+	  				</div>
+	  			</div> <!-- col-md-6 -->
+	  			<div class="col-md-6">
+	  				<p class="strong">
+	  					Select Condition:
+	  				</p>
+	  				<select size="10" class="list-group" id="condition-list-group">
+	  				</select>
+	  				<div class="col-md-13 mt-4">
+	  					<p class="float-right">
+		  					<input type="button" class="btn btn-sm btn-success" id="next-btn" value="Next Case >>"/>
+		  				</p>
+	  				</div> <!-- container -->
+	  			</div> <!-- col-md-6 -->
+  			</div> <!-- row -->
+  		</div> <!-- row-fluid -->
+  	</div> <!-- container fluid -->
+
+  	<script type="text/javascript">
+  		var app;
+  		$(document).ready(function() {
+  			app = new router();
+  			Backbone.history.start();
+
+  			$('login-btn').click()
+  		});
+  	</script>
+  </body>
+</html>
